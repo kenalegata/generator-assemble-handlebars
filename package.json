@@ -1,15 +1,14 @@
 {
   "name": "generator-assemble-handlebars",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Yeoman generator",
-  "license": "MIT",
+  "license": "BSD-2-Clause",
   "main": "app/index.js",
-  "repository": "kenalegata/generator-assemble-handlebars",
-  "author": {
-    "name": "",
-    "email": "",
-    "url": "https://github.com/kenalegata"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kenalegata/generator-assemble-handlebars"
   },
+  "author": " (https://github.com/kenalegata)",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -32,5 +31,12 @@
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/kenalegata/generator-assemble-handlebars/issues"
+  },
+  "homepage": "https://github.com/kenalegata/generator-assemble-handlebars",
+  "directories": {
+    "test": "test"
   }
 }

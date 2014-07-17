@@ -34,7 +34,7 @@ module.exports = function(grunt) {
                 assets: 'assets',
                 plugins: ['permalinks'],
                 partials: ['app/partials/**/*.hbs'],
-                layout: ['app/layouts/layout.hbs'],
+                layoutdir: 'app/layouts',
                 data: ['data/*.{json,yml}']
             },
             site: {
