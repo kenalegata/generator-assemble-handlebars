@@ -38,6 +38,9 @@ module.exports = function(grunt) {
                 data: ['data/*.{json,yml}']
             },
             site: {
+                options: {
+                    layout: 'layout.hbs'
+                },
                 expand: true,
                 cwd: 'app/pages/',
                 src: ['**/*.hbs'],
@@ -106,19 +109,20 @@ module.exports = function(grunt) {
         concat: {
             build: {
                 src: ['app/js/partials/**/*.js'],
-                dest: 'build/js/functions.js',
+                dest: 'build/js/main.js',
             },
         },
 
         uglify: {
             mainjs: {
-                src: 'app/js/main.js',
-                dest: 'build/js/main.js'
-
+                src: 'build/js/main.js',
+                dest: {
+                    'build/js/main.min.js': 'dist/js/frontend.js'
+                }
             },
             iejs: {
                 src: 'app/js/ie.js',
-                dest: 'build/js/ie.js'
+                dest: 'build/js/ie.min.js'
             }
         },
 
@@ -170,6 +174,6 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['jshint', 'assemble', 'compass:dev', 'concat', 'copy', 'connect:livereload', 'watch']);
 
-    grunt.registerTask('build', ['clean:css', 'clean:js', 'jshint', 'assemble', 'compass:build', 'concat', 'copy', 'uglify']);
+    grunt.registerTask('build', ['clean:css', 'clean:js', , 'jshint', 'assemble', 'compass:build', 'concat', 'copy', 'uglify']);
 
 };
