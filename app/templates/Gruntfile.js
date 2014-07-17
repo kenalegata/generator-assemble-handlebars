@@ -31,7 +31,8 @@ module.exports = function(grunt) {
 
         assemble: {
             options: {
-                // assets: 'assets',
+                assets: 'assets',
+                plugins: ['permalinks'],
                 partials: ['app/partials/**/*.hbs'],
                 layoutdir: 'app/layouts',
                 data: ['data/*.{json,yml}']
