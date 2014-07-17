@@ -1,42 +1,42 @@
 {
-  "name": "generator-assemble-handlebars",
-  "version": "0.1.0",
-  "description": "Yeoman generator",
-  "license": "BSD-2-Clause",
-  "main": "app/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/kenalegata/generator-assemble-handlebars"
-  },
-  "author": " (https://github.com/kenalegata)",
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "files": [
-    "app"
-  ],
-  "keywords": [
-    "yeoman-generator"
-  ],
-  "dependencies": {
-    "yeoman-generator": "~0.16.0",
-    "chalk": "~0.4.0",
-    "yosay": "^0.1.0"
-  },
-  "devDependencies": {
-    "mocha": "*"
-  },
-  "peerDependencies": {
-    "yo": ">=1.0.0"
-  },
-  "bugs": {
-    "url": "https://github.com/kenalegata/generator-assemble-handlebars/issues"
-  },
-  "homepage": "https://github.com/kenalegata/generator-assemble-handlebars",
-  "directories": {
-    "test": "test"
-  }
+    "name": "generator-assemble-handlebars",
+    "version": "0.1.1",
+    "description": "Yeoman generator",
+    "license": "BSD-2-Clause",
+    "main": "app/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/kenalegata/generator-assemble-handlebars"
+    },
+    "author": " (https://github.com/kenalegata)",
+    "engines": {
+        "node": ">=0.10.0"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "files": [
+        "app"
+    ],
+    "keywords": [
+        "yeoman-generator"
+    ],
+    "dependencies": {
+        "yeoman-generator": "~0.16.0",
+        "chalk": "~0.4.0",
+        "yosay": "^0.1.0"
+    },
+    "devDependencies": {
+        "mocha": "*"
+    },
+    "peerDependencies": {
+        "yo": ">=1.0.0"
+    },
+    "bugs": {
+        "url": "https://github.com/kenalegata/generator-assemble-handlebars/issues"
+    },
+    "homepage": "https://github.com/kenalegata/generator-assemble-handlebars",
+    "directories": {
+        "test": "test"
+    }
 }
