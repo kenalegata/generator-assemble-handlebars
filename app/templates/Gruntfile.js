@@ -174,6 +174,6 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['jshint', 'assemble', 'compass:dev', 'concat', 'copy', 'connect:livereload', 'watch']);
 
-    grunt.registerTask('build', ['clean:css', 'clean:js', , 'jshint', 'assemble', 'compass:build', 'concat', 'copy', 'uglify']);
+    grunt.registerTask('build', ['clean:css', 'clean:js', 'jshint', 'assemble', 'compass:build', 'concat', 'copy', 'uglify']);
 
 };
