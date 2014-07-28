@@ -16,11 +16,11 @@ module.exports = function(grunt) {
                 livereload: true,
             },
             css: {
-                files: 'app/css/**/*.scss',
+                files: 'app/assets/css/**/*.scss',
                 tasks: ['compass:dev']
             },
             js: {
-                files: ['app/js/**/*.js'],
+                files: ['app/assets/js/**/*.js'],
                 tasks: ['concat'],
             },
             html: {
@@ -50,23 +50,23 @@ module.exports = function(grunt) {
 
         jshint: {
             all: [
-                'app/js/**/*.js',
-                '!app/js/vendor/**/*.js'
+                'app/assets/js/**/*.js',
+                '!app/assets/js/vendor/**/*.js'
             ]
         },
 
         compass: {
             build: {
                 options: {
-                    sassDir: 'app/css',
-                    cssDir: 'build/css',
+                    sassDir: 'app/assets/css',
+                    cssDir: 'build/assets/css',
                     environment: 'production'
                 }
             },
             dev: {
                 options: {
-                    sassDir: 'app/css',
-                    cssDir: 'build/css'
+                    sassDir: 'app/assets/css',
+                    cssDir: 'build/assets/css'
                 }
             }
         },
@@ -75,54 +75,54 @@ module.exports = function(grunt) {
             js: {
                 files: [{
                     expand: true,
-                    cwd: 'app/js/vendor/',
+                    cwd: 'app/assets/js/vendor/',
                     src: '**/*',
-                    dest: 'build/js/vendor/'
+                    dest: 'build/assets/js/vendor/'
                 }, ],
             },
             iejs: {
                 files: [{
                     expand: true,
-                    cwd: 'app/js',
+                    cwd: 'app/assets/js',
                     src: 'ie.js',
-                    dest: 'build/js'
+                    dest: 'build/assets/js'
                 }, ],
             },
             img: {
                 files: [{
                     expand: true,
-                    cwd: 'app/img/',
+                    cwd: 'app/assets/img/',
                     src: '**/*',
-                    dest: 'build/img/'
+                    dest: 'build/assets/img/'
                 }, ],
             },
             fonts: {
                 files: [{
                     expand: true,
-                    cwd: 'app/fonts/',
+                    cwd: 'app/assets/fonts/',
                     src: '**/*',
-                    dest: 'build/fonts/'
+                    dest: 'build/assets/fonts/'
                 }, ],
             }
         },
 
         concat: {
             build: {
-                src: ['app/js/partials/**/*.js'],
-                dest: 'build/js/main.js',
+                src: ['app/assets/js/partials/**/*.js'],
+                dest: 'build/assets/js/main.js',
             },
         },
 
         uglify: {
             mainjs: {
-                src: 'build/js/main.js',
+                src: 'build/assets/js/main.js',
                 dest: {
-                    'build/js/main.min.js': 'dist/js/frontend.js'
+                    'build/assets/js/main.min.js': 'dist/js/frontend.js'
                 }
             },
             iejs: {
-                src: 'app/js/ie.js',
-                dest: 'build/js/ie.min.js'
+                src: 'app/assets/js/ie.js',
+                dest: 'build/assets/js/ie.min.js'
             }
         },
 
@@ -154,9 +154,9 @@ module.exports = function(grunt) {
 
         clean: {
             build: ['build'],
-            js: ['build/js'],
-            css: ['build/css'],
-            img: ['build/img']
+            js: ['build/assets/js'],
+            css: ['build/assets/css'],
+            img: ['build/assets/img']
         }
     });
 
