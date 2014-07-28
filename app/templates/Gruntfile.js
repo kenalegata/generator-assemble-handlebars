@@ -116,9 +116,8 @@ module.exports = function(grunt) {
         uglify: {
             mainjs: {
                 src: 'build/assets/js/main.js',
-                dest: {
-                    'build/assets/js/main.min.js': 'dist/js/frontend.js'
-                }
+                dest: 'build/assets/js/main.min.js'
+                
             },
             iejs: {
                 src: 'app/assets/js/ie.js',
