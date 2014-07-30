@@ -26,6 +26,14 @@ module.exports = function(grunt) {
             html: {
                 files: ['app/**/*.hbs'],
                 tasks: ['assemble']
+            },
+            img: {
+                files: ['app/assets/images/**/*.{jpg,gif,png}'],
+                tasks: ['copy:img']
+            },
+            fonts: {
+                files: ['app/assets/fonts/**/*.{otf,ttf,woff,eot}'],
+                tasks: ['copy:fonts']
             }
         },
 
@@ -80,6 +88,14 @@ module.exports = function(grunt) {
                     dest: 'build/assets/js/vendor/'
                 }, ],
             },
+            mainjs: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/assets/js/',
+                    src: 'main.js',
+                    dest: 'build/assets/js/'
+                }, ],
+            },
             iejs: {
                 files: [{
                     expand: true,
@@ -108,8 +124,8 @@ module.exports = function(grunt) {
 
         concat: {
             build: {
-                src: ['app/assets/js/partials/**/*.js'],
-                dest: 'build/assets/js/main.js',
+                src: ['app/assets/js/functions/**/*.js'],
+                dest: 'build/assets/js/functions.js',
             },
         },
 
@@ -117,7 +133,7 @@ module.exports = function(grunt) {
             mainjs: {
                 src: 'build/assets/js/main.js',
                 dest: 'build/assets/js/main.min.js'
-                
+
             },
             iejs: {
                 src: 'app/assets/js/ie.js',
