@@ -42,6 +42,16 @@ Yeoman has a heart of gold. He's a person with feelings and opinions, but he's v
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
 
 
+### Dependencies
+
+To use the generator, you need to install compass.
+The generator uses compass to compile sass or scss files.
+
+```bash
+gem install compass
+```
+
+
 ## License
 
 MIT
