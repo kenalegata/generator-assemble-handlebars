@@ -92,3 +92,12 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=transparent, endColorstr=$to)";
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=transparent, endColorstr=$to, GradientType=0 ); /* IE6-9 */
 }
+
+// Clearfix
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

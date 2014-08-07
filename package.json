@@ -1,6 +1,6 @@
 {
     "name": "generator-assemble-handlebars",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "description": "Yeoman generator",
     "license": "BSD-2-Clause",
     "main": "app/index.js",
