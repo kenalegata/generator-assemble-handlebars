@@ -35,7 +35,7 @@ module.exports = function(grunt) {
             },
             livereload: {
                 options: {
-                    livereload: '<%= connect.options.livereload %>'
+                    livereload: 35729
                 },
                 files: [
                     'app/**/*.hbs',
