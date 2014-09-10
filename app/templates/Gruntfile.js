@@ -1,20 +1,14 @@
 'use strict';
 
-
-var livereloadSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-var mountFolder = function(connect, dir) {
-    return connect.static(require('path').resolve(dir));
-};
-
 module.exports = function(grunt) {
+
+    // Load grunt tasks automatically
+    require('load-grunt-tasks')(grunt);
 
     // Project configuration.
     grunt.initConfig({
 
         watch: {
-            options: {
-                livereload: true,
-            },
             css: {
                 files: 'app/assets/css/**/*.scss',
                 tasks: ['compass:dev']
@@ -34,6 +28,46 @@ module.exports = function(grunt) {
             fonts: {
                 files: ['app/assets/fonts/**/*.{otf,ttf,woff,eot}'],
                 tasks: ['copy:fonts']
+            },
+            json: {
+                files: ['app/data/**/*.json'],
+                tasks: ['assemble']
+            },
+            livereload: {
+                options: {
+                    livereload: '<%= connect.options.livereload %>'
+                },
+                files: [
+                    'app/**/*.hbs',
+                    'app/assets/css/**/*.scss',
+                    'app/assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'
+                ]
+            }
+        },
+
+        connect: {
+            options: {
+                port: 9090,
+                hostname: 'localhost', // change this to '0.0.0.0' to access the server from outside
+                livereload: 35729
+            },
+            livereload: {
+                options: {
+                    middleware: function(connect) {
+                        return [
+                            connect.static('build')
+                        ];
+                    }
+                }
+            },
+            dist: {
+                options: {
+                    middleware: function(connect) {
+                        return [
+                            connect.static('build')
+                        ];
+                    }
+                }
             }
         },
 
@@ -43,7 +77,7 @@ module.exports = function(grunt) {
                 plugins: ['permalinks'],
                 partials: ['app/partials/**/*.hbs'],
                 layoutdir: 'app/layouts',
-                data: ['app/data/*.{json,yml}']
+                data: ['app/data/**/*.{json,yml}']
             },
             site: {
                 options: {
@@ -141,54 +175,35 @@ module.exports = function(grunt) {
             }
         },
 
-        connect: {
-            options: {
-                port: 9090,
-                hostname: 'localhost' // change this to '0.0.0.0' to access the server from outside
-            },
-            livereload: {
-                options: {
-                    middleware: function(connect) {
-                        return [
-                            livereloadSnippet,
-                            mountFolder(connect, 'build')
-                        ];
-                    }
-                }
-            },
-            dist: {
-                options: {
-                    middleware: function(connect) {
-                        return [
-                            mountFolder(connect, 'build')
-                        ];
-                    }
-                }
-            }
-        },
-
         clean: {
-            build: ['build'],
+            html: ['build/**/*.html'],
             js: ['build/assets/js'],
             css: ['build/assets/css'],
             img: ['build/assets/img']
         }
     });
 
-    // Load the plugin that provides the "uglify" task.
-    grunt.loadNpmTasks('assemble');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('assemble'); // Special case
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'assemble', 'compass:dev', 'concat', 'copy', 'connect:livereload', 'watch']);
+    grunt.registerTask('default', [
+        'jshint',
+        'assemble',
+        'compass:dev',
+        'concat',
+        'copy',
+        'connect:livereload',
+        'watch'
+    ]);
 
-    grunt.registerTask('build', ['clean:build', 'jshint', 'assemble', 'compass:build', 'concat', 'copy', 'uglify']);
+    grunt.registerTask('build', [
+        'clean',
+        'jshint',
+        'assemble',
+        'compass:build',
+        'concat',
+        'copy',
+        'uglify'
+    ]);
 
 };
