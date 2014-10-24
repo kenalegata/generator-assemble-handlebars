@@ -153,6 +153,14 @@ module.exports = function(grunt) {
                     src: '**/*',
                     dest: 'build/assets/fonts/'
                 }, ],
+            },
+            etc: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/',
+                    src: '*.{png,ico,jpg,gif,md,txt}',
+                    dest: 'build/'
+                }]
             }
         },
 

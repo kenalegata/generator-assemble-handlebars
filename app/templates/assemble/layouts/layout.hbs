@@ -12,38 +12,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="icon" type="image/ico" href="{{relative page.dest "favicon.ico"}}"/>
+        <link rel="apple-touch-icon" href="{{relative page.dest "apple-touch-icon.png"}}" />
+        <link rel="apple-touch-icon-precomposed" href="{{relative page.dest "apple-touch-icon-precomposed.png"}}" />
 
-        <link rel="stylesheet" href="assets/css/main.css">
-        <script src="assets/js/vendor/modernizr-2.6.1.min.js"></script>
+        <link rel="stylesheet" href="{{relative page.dest "assets/css"}}/main.css">
+        <script src="{{relative page.dest "assets/js"}}/vendor/modernizr-2.6.1.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
 
         {{>body}}
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
-        <script src="assets/js/main.js"></script>
+        <script src="{{relative page.dest "assets/js"}}/vendor/jquery-1.11.1.main.js"></script>
+        <script src="{{relative page.dest "assets/js"}}/main.js"></script>
 
         <!--[if lt IE 9]>
-            <script src="assets/js/vendor/html5shiv.min.js"></script>
-            <script src="assets/js/vendor/selectivizr.js"></script>
-            <script src="assets/js/vendor/PIE_IE678.js"></script>
-            <script src="assets/js/vendor/respond.min.js"></script>
-            <script src="assets/js/vendor/rem.min.js"></script>
-            <script src="assets/js/ie.js"></script>
+            <script src="{{relative page.dest "assets/js"}}/vendor/html5shiv.min.js"></script>
+            <script src="{{relative page.dest "assets/js"}}/vendor/selectivizr.js"></script>
+            <script src="{{relative page.dest "assets/js"}}/vendor/PIE_IE678.js"></script>
+            <script src="{{relative page.dest "assets/js"}}/vendor/respond.min.js"></script>
+            <script src="{{relative page.dest "assets/js"}}/vendor/rem.min.js"></script>
+            <script src="{{relative page.dest "assets/js"}}/ie.js"></script>
         <![endif]-->
 
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-        //     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-        //     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        //     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        //     s.parentNode.insertBefore(g,s)}(document,'script'));
-        // 
-        </script>
     </body>
 </html>
