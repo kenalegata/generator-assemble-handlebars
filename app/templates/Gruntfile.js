@@ -15,7 +15,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['app/assets/js/**/*.js'],
-                tasks: ['concat'],
+                tasks: ['concat','copy:mainjs'],
             },
             html: {
                 files: ['app/**/*.hbs'],
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
 
         assemble: {
             options: {
-                assets: 'assets',
+                assets: 'app/assets',
                 plugins: ['permalinks'],
                 partials: ['app/partials/**/*.hbs'],
                 layoutdir: 'app/layouts',
@@ -81,7 +81,8 @@ module.exports = function(grunt) {
             },
             site: {
                 options: {
-                    layout: 'layout.hbs'
+                    layout: 'layout.hbs',
+                    assets: 'build/assets'
                 },
                 expand: true,
                 cwd: 'app/pages/',
